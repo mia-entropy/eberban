@@ -1,7 +1,7 @@
 # Predicates and propositions
 
 The whole language is based on a concept called a **predicate**. To understand
-what predicates are, let's first look at one type of predicate : a **proposition**.
+what predicates are, let's first look at one type of predicate: a **proposition**.
 
 A **proposition** is anything that has a **truth value** (which can be true or false).
 
@@ -9,7 +9,7 @@ A **proposition** is anything that has a **truth value** (which can be true or f
 A cat drinks milk.
 ```
 
-In English, this sentence is a proposition : it claims *a cat is drinking
+In English, this sentence is a proposition: it claims *a cat is drinking
 milk*. A predicate is a proposition template with one or more **open blanks**
 (called **arguments**) which may be filled in to make a complete proposition
 with a truth value. Thus, a proposition is a predicate with all of its open
@@ -38,13 +38,13 @@ proposition true.
 
 `mian` means `___ is a cat` while `mrin` means `___ is milk`. It thus means that
 "*(something which is a cat) drinks (something which is milk)*", or said more
-simply : "A cat drinks milk".
+simply: "A cat drinks milk".
 
 ---
 
 Places can be left empty if desired. In this case, they get a default value.
 This default value can be defined by the definition, otherwise it is
-undefined and is infered from context : it is either obvious or not worth
+undefined and is infered from context: it is either obvious or not worth
 to provide.
 
 ```ebb
