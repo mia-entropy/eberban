@@ -1,9 +1,12 @@
+// TODO: [jqueiroz] split modules into separate files
+
 pub mod dict {
     use std::collections::BTreeMap;
     use std::{fs::File,io::BufReader};
 
     #[derive(Debug, serde::Serialize, serde::Deserialize)]
     pub struct Entry {
+        // TODO: [jqueiroz] enum for all possible families
         #[serde(rename = "_family")]
         pub family: String,
 
