@@ -13,7 +13,7 @@ It is possible to fill multiple places with the same predicate by chaining multi
 ```
 
 Usually, the main predicate of a proposition is placed first, then places are
-filled with **FA/DU**. However, it's possible to fill places before. In this
+filled with **FA/DU**. However, it is possible to fill places before. In this
 case, the main predicate must be prefixed with **do**. It can be used to express
 the most important part first.
 
@@ -38,36 +38,37 @@ numbered place (considering places filled with **fa**-like as well as **fai**).
 
 If no numbered place has been filled before, **fai** will fill the 1st place if
 used before the main predicate (with **do**), or the 2st place if used after.
+<!-- TODO: [jqueiroz] we should update this -->
 
 ## Imported place
 
-The place structures of most words are deliberatly kept simple. However it is
+The place structure of most words is deliberatly kept simple. However, it is
 common for a predicate to not have a place for a concept we want to express.
 
-With **du**, it's possible to import the first place of the following predicate
-(it ignores predicate chaining which will be explained in the next section).
+With **du**, it's possible to import the first place of the immediately following predicate
+(it ignores predicate chaining, which will be explained in the next section).
 
 ```ebb
-spi fa mi fe mo du pli skai
+spi fa mi fe mo du plir skai
 = I talk to you using a computer.
 
-pli  : ___ is a tool used by ___ to satisfying property [___2]
-du pli : "with-tool:"
-skai : ___ is a computer
+plir   : ___ is a tool used by ___ to satisfying property [___2]
+du plir: "with-tool:"
+skai   : ___ is a computer
 ```
 
-`du pli` imports the place expressing the concept of *a tool* to tell which tool
-is used to talk.
+`du plir` imports the place expressing the concept of *a tool*, allowing us to specify tell which tool
+is being used to talk.
 
 ## Prenex
 
-**foi** does not fill a place, but allows to provide what is called a prenex. It can
+**foi** does not fill a place, but allows providing what is called a prenex. It can
 be used to define a topic or declare quantified variables, separated from their
 use site, usually early/first in the proposition.
 
 ```ebb
-foi mian fa mi do dul fe mu'i
-= About the cat : I like it.
+foi mlia fa mi do dul fe muhi
+= About the cat: I like it.
 ```
 
 ## Place question
@@ -76,10 +77,10 @@ foi mian fa mi do dul fe mu'i
 predicate.
 
 ```ebb
-val fa mo fei spu
-= Is a house your origin or destination ?
-= Are you going to or coming back from home ?
+vla fa mo fei zda
+= Is a house your origin or destination?
+= Are you going to or coming back from home?
 
-spu : ___ is a nest/house/home of ___
+zda: ___ is a nest/house/home of ___
 ```
 
