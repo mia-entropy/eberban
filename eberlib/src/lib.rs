@@ -54,7 +54,8 @@ pub mod utils {
         /// A pattern of consonants and vowel tails, e.g. CVC or CCVC
         type LetterPattern = Vec<LetterType>;
 
-        pub static VOWELS : [char; 6] = [ 'a', 'e', 'i', 'o', 'u', 'y' ];
+        // There is no special handling of diphthongs yet
+        pub static VOWELS : [char; 8] = [ 'a', 'e', 'i', 'o', 'u', 'y', 'q', 'w' ];
 
         pub static CODA : [char; 3] = [ 'l', 'n', 'r' ];
 
