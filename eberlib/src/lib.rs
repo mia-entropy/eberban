@@ -6,6 +6,9 @@ pub mod dict {
 
     #[derive(Debug, serde::Serialize, serde::Deserialize)]
     pub struct Entry {
+        #[serde(default)]
+        pub key: String,
+
         // TODO: [jqueiroz] enum for all possible families
         #[serde(rename = "_family")]
         pub family: String,
@@ -27,7 +30,19 @@ pub mod dict {
 
     pub fn from_file(file: File) -> Result<Dictionary, serde_yaml::Error> {
         let reader = BufReader::new(file);
-        return serde_yaml::from_reader(reader);
+        let mut dict = serde_yaml::from_reader(reader)?;
+        utils::extend_with_keys(&mut dict);
+        return Ok(dict);
+    }
+
+    mod utils {
+        use super::Dictionary;
+
+        pub fn extend_with_keys(dict: &mut Dictionary) {
+            for (k, v) in dict.iter_mut() {
+                v.key = k.clone();
+            }
+        }
     }
 }
 
@@ -52,7 +67,7 @@ pub mod utils {
         }
 
         /// A pattern of consonants and vowel tails, e.g. CVC or CCVC
-        type LetterPattern = Vec<LetterType>;
+        pub type LetterPattern = Vec<LetterType>;
 
         // There is no special handling of diphthongs yet
         pub static VOWELS : [char; 8] = [ 'a', 'e', 'i', 'o', 'u', 'y', 'q', 'w' ];
@@ -228,7 +243,8 @@ pub mod utils {
 
     pub enum InvalidRootTypeError {
         NotARoot,
-        InvalidLetterPattern,
+        IllegalLetterPattern(letter_decomposition::DecompositionError),
+        InvalidLetterPatternForRoots(letter_decomposition::LetterPattern),
     }
 
     pub fn is_root(entry: &Entry) -> bool {
@@ -239,7 +255,16 @@ pub mod utils {
         if !is_root(entry) {
             Err(InvalidRootTypeError::NotARoot)
         } else {
-            Ok(RootType::CVC)
+            use letter_decomposition::LetterType;
+
+            let letter_pattern = letter_decomposition::decompose_word(&entry.key).or_else(|err| Err(InvalidRootTypeError::IllegalLetterPattern(err)))?;
+            return match letter_pattern[..] {
+                [LetterType::VowelTail, LetterType::Consonant] => Ok(RootType::VC),
+                [LetterType::Consonant, LetterType::VowelTail, LetterType::Consonant] => Ok(RootType::CVC),
+                [LetterType::Consonant, LetterType::Consonant, LetterType::VowelTail] => Ok(RootType::CCV),
+                [LetterType::Consonant, LetterType::Consonant, LetterType::VowelTail, LetterType::Consonant] => Ok(RootType::CCVC),
+                _ => Err(InvalidRootTypeError::InvalidLetterPatternForRoots(letter_pattern)),
+            };
         }
     }
 }
