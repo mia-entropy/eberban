@@ -48,12 +48,35 @@ pub mod dict {
 
 pub mod presentation {
     use super::dict::Entry;
+    use super::utils::letter_decomposition::{DecompositionError,LetterPattern,LetterType};
 
     pub fn format_entry_type(entry: &Entry) -> String {
         match &entry.signature {
             None => format!("{}", entry.family),
             Some(signature) => format!("{} ({})", entry.family, signature)
         }
+    }
+
+    pub fn format_decomposition_error(decomposition_error: &DecompositionError) -> String {
+        match decomposition_error {
+            DecompositionError::EmptyWord => String::from("Empty word"),
+            DecompositionError::AllConsonants => String::from("Word contains only consonants"),
+            DecompositionError::UnexpectedSeparatorAtWordStart(c) => format!("Unexpected separator at word start ('{}')", c),
+            DecompositionError::UnexpectedHAfterConsonant(pos) => format!("Unexpected 'h' after consonant (at position {})", pos),
+            DecompositionError::UnexpectedNonCodaConsonantAfterVowel(pos, c) => format!("Unexpected non-coda consonant after vowel ('{}', at position {})", c, pos),
+            DecompositionError::UnexpectedVowelAfterDiphthong(pos, c) => format!("Unexpected vowel after diphthong ('{}', at position {})", c, pos),
+            DecompositionError::UnexpectedConsonantAfterSeparator(pos, c) => format!("Unexpected consonant after separator ('{}', at position {})", c, pos),
+            DecompositionError::UnexpectedHAfterSeparator(pos) => format!("Unexpected 'h' after separator (at position {})", pos),
+            DecompositionError::InvalidWordEnding(c) => format!("Invalid word ending character ('{}')", c),
+            DecompositionError::UnknownSymbol(pos, c) => format!("Unknown symbol ('{}', at position {})", c, pos),
+        }
+    }
+
+    pub fn format_letter_pattern(letter_pattern: &LetterPattern) -> String {
+        letter_pattern.iter().map(|letter_type| match letter_type {
+            LetterType::VowelTail => 'V',
+            LetterType::Consonant => 'C',
+        }).collect()
     }
 }
 
@@ -102,6 +125,7 @@ pub mod utils {
             return CONSONANTS.contains(letter);
         }
 
+        // TODO: fix validation of diphthongs (UnexpectedVowelAfterDiphthong)
         pub enum DecompositionError {
             EmptyWord,
             AllConsonants,
@@ -110,7 +134,7 @@ pub mod utils {
             UnexpectedNonCodaConsonantAfterVowel(usize, char),
             UnexpectedVowelAfterDiphthong(usize, char),
             UnexpectedConsonantAfterSeparator(usize, char),
-            UnexpectedHAfterSeparator(usize, char),
+            UnexpectedHAfterSeparator(usize),
             InvalidWordEnding(char),
             UnknownSymbol(usize, char),
         }
@@ -178,7 +202,10 @@ pub mod utils {
                     DecompositionState::Vowel2 => {
                         // The second vowel must be followed by a separator
                         if is_vowel(&letter) {
-                            return Err(DecompositionError::UnexpectedVowelAfterDiphthong(position, letter));
+                            // Well, we need special handling for diphthongs now that e.g. "mliya"
+                            // is allowed. Until then, let's NOT raise any decomposition errors.
+                            // TODO: [jqueiroz] resume validating diphthongs
+                            //return Err(DecompositionError::UnexpectedVowelAfterDiphthong(position, letter));
                         } else if is_separator(&letter) {
                             state = DecompositionState::Separator;
                         } else if is_consonant(&letter) {
@@ -194,7 +221,7 @@ pub mod utils {
                         } else if is_consonant(&letter) {
                             return Err(DecompositionError::UnexpectedConsonantAfterSeparator(position, letter));
                         } else if is_h(&letter) {
-                            return Err(DecompositionError::UnexpectedHAfterSeparator(position, letter));
+                            return Err(DecompositionError::UnexpectedHAfterSeparator(position));
                         } else {
                             return Err(DecompositionError::UnknownSymbol(position, letter));
                         }
@@ -234,6 +261,7 @@ pub mod utils {
         }
     }
 
+    #[derive(PartialEq)]
     pub enum RootType {
         VC,
         CVC,
@@ -272,23 +300,47 @@ pub mod utils {
 pub mod validation {
     use super::dict::Entry;
     use super::utils;
+    use super::presentation;
 
     pub struct ValidationResult {
-        key: String,
-        message: String,
-        suggestions: Vec<String>,
+        pub key: String,
+        pub message: String,
+        pub suggestions: Vec<String>,
     }
 
-    pub fn validate_entry(entry: &Entry) {
+    pub fn validate_entry(entry: &Entry) -> Vec<ValidationResult> {
+        let mut ret = Vec::new();
+        let mut push_result = |message| ret.push(ValidationResult {
+            key: entry.key.clone(),
+            message: message,
+            suggestions: Vec::new(),
+        });
+
         // General validations
         // . -> '
 
         // Root-specific validations
         if utils::is_root(entry) {
+            use utils::{RootType,InvalidRootTypeError};
             match utils::get_root_type(entry) {
-                _ => {}
+                Err(InvalidRootTypeError::NotARoot) => panic!("get_root_type for a root yielded NotARoot"),
+                Err(InvalidRootTypeError::IllegalLetterPattern(decomposition_error)) => {
+                    push_result(format!("Illegal letter pattern: {}", presentation::format_decomposition_error(&decomposition_error)));
+                },
+                Err(InvalidRootTypeError::InvalidLetterPatternForRoots(letter_pattern)) => {
+                    push_result(format!("Invalid letter pattern for root: {}", presentation::format_letter_pattern(&letter_pattern)));
+                },
+                Ok(root_type) => {
+                    // For CCV and CCVC roots, the signature must match the final coda (if any)
+                    if root_type == RootType::CCV || root_type == RootType::CCVC {
+                        // TODO: validate the signature
+                    }
+                }
             }
         }
+
+        // Return the result
+        return ret;
     }
 }
 
