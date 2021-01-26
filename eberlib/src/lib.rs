@@ -203,7 +203,7 @@ pub mod utils {
                 DecompositionState::Separator => {
                     // This is a valid terminal state, but the last character needs to be a coda (not h), and some postprocessing is needed to add it as a separate consonant (as it is not part of the vowel tail)
                     if let Some(letter) = last_letter {
-                        if (is_coda(&letter)) {
+                        if is_coda(&letter) {
                             result.push(LetterType::Consonant);
                             return Ok(result);
                         } else {
