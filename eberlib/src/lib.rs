@@ -62,13 +62,13 @@ pub mod presentation {
             DecompositionError::EmptyWord => String::from("Empty word"),
             DecompositionError::AllConsonants => String::from("Word contains only consonants"),
             DecompositionError::UnexpectedSeparatorAtWordStart(c) => format!("Unexpected separator at word start ('{}')", c),
-            DecompositionError::UnexpectedHAfterConsonant(pos) => format!("Unexpected 'h' after consonant (at position {})", pos),
-            DecompositionError::UnexpectedNonCodaConsonantAfterVowel(pos, c) => format!("Unexpected non-coda consonant after vowel ('{}', at position {})", c, pos),
-            DecompositionError::UnexpectedVowelAfterDiphthong(pos, c) => format!("Unexpected vowel after diphthong ('{}', at position {})", c, pos),
-            DecompositionError::UnexpectedConsonantAfterSeparator(pos, c) => format!("Unexpected consonant after separator ('{}', at position {})", c, pos),
-            DecompositionError::UnexpectedHAfterSeparator(pos) => format!("Unexpected 'h' after separator (at position {})", pos),
+            DecompositionError::UnexpectedHAfterConsonant(pos) => format!("Unexpected 'h' after consonant (at position {})", pos+1),
+            DecompositionError::UnexpectedNonCodaConsonantAfterVowel(pos, c) => format!("Unexpected non-coda consonant after vowel ('{}', at position {})", c, pos+1),
+            DecompositionError::UnexpectedVowelAfterDiphthong(pos, c) => format!("Unexpected vowel after diphthong ('{}', at position {})", c, pos+1),
+            DecompositionError::UnexpectedConsonantAfterSeparator(pos, c) => format!("Unexpected consonant after separator ('{}', at position {})", c, pos+1),
+            DecompositionError::UnexpectedHAfterSeparator(pos) => format!("Unexpected 'h' after separator (at position {})", pos+1),
             DecompositionError::InvalidWordEnding(c) => format!("Invalid word ending character ('{}')", c),
-            DecompositionError::UnknownSymbol(pos, c) => format!("Unknown symbol ('{}', at position {})", c, pos),
+            DecompositionError::UnknownSymbol(pos, c) => format!("Unknown symbol ('{}', at position {})", c, pos+1),
         }
     }
 
