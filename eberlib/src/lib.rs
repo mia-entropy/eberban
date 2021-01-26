@@ -236,7 +236,7 @@ pub mod utils {
     }
 
     pub fn get_root_type(entry: &Entry) -> Result<RootType, InvalidRootTypeError> {
-        if is_root(entry) {
+        if !is_root(entry) {
             Err(InvalidRootTypeError::NotARoot)
         } else {
             Ok(RootType::CVC)
