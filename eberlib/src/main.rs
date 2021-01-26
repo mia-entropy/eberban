@@ -10,6 +10,21 @@ enum Opt {
         #[structopt(short, long, parse(from_os_str))]
         dictionary_filename: PathBuf,
     },
+    Validator {
+        /// Dictionary filename
+        #[structopt(short, long, parse(from_os_str))]
+        dictionary_filename: PathBuf,
+    },
+}
+
+fn load_dictionary(dictionary_filename: PathBuf) -> eberlib::dict::Dictionary {
+    let file = File::open(&dictionary_filename).unwrap_or_else(|error| {
+        panic!("Unable to open dictionary file {:?} -- {:?}", dictionary_filename, error);
+    });
+    let dictionary = eberlib::dict::from_file(file).unwrap_or_else(|error| {
+        panic!("Unable to parse dictionary contents -- {:?}", error);
+    });
+    return dictionary;
 }
 
 fn main() {
@@ -17,13 +32,12 @@ fn main() {
 
     match opt {
         Opt::Glosser { dictionary_filename } => {
-            let file = File::open(&dictionary_filename).unwrap_or_else(|error| {
-                panic!("Unable to open dictionary file {:?} -- {:?}", dictionary_filename, error);
-            });
-            let dictionary = eberlib::dict::from_file(file).unwrap_or_else(|error| {
-                panic!("Unable to parse dictionary contents -- {:?}", error);
-            });
+            let dictionary = load_dictionary(dictionary_filename);
             eberlib::cli::run_interactive_dictionary(dictionary);
+        }
+        Opt::Validator { dictionary_filename } => {
+            let dictionary = load_dictionary(dictionary_filename);
+            eberlib::cli::run_validator(dictionary);
         }
     };
 }

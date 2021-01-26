@@ -346,7 +346,7 @@ pub mod validation {
 
 pub mod cli {
     use std::io::{self, BufRead};
-    use super::{presentation,dict::Dictionary};
+    use super::{validation,presentation,dict::Dictionary};
 
     pub fn run_interactive_dictionary(dict: Dictionary) {
         let stdin = io::stdin();
@@ -363,6 +363,15 @@ pub mod cli {
                         _ => {}
                     }
                 }
+            }
+        }
+    }
+
+    pub fn run_validator(dict: Dictionary) {
+        for entry in dict.values() {
+            for result in validation::validate_entry(entry) {
+                // TODO: [jqueiroz] print suggestions as well, and perhaps introduce colors
+                println!("[{}] {}", result.key, result.message)
             }
         }
     }
