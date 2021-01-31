@@ -2125,6 +2125,11 @@ zu:
   eng_long: "prefix a foreign word quote surrounded by the same 1 native word. ___ is quote [quote] in language/format ___"
   eng_short: ""
   jbo_similar: zoi
+zuy:
+  _family: "ZU"
+  eng_long: "prefix a foreign expression surrounded by the same 1 native word, place structure is infered from context"
+  eng_short: (complex)
+  jbo_similar: fu'ivla
 zva:
   _family: "R"
   _signature: ".."
