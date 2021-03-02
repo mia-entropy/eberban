@@ -671,7 +671,7 @@ myan:
   eng_short: "cat"
 ple:
   _family: "R"
-  eng_long: "A is a tool used by E to make I (bound to O-A) satisfy property [O]."
+  eng_long: "A is a tool used by E for purpose [I0]."
   eng_short: "tool"
 plin:
   _family: "R"
@@ -699,7 +699,7 @@ sni:
   eng_short: "greets"
 spi:
   _family: "R"
-  eng_long: "A talks to [E]."
+  eng_long: "A talks to [E] about subject I0."
   eng_short: "talks"
 spu:
   _family: "R"
@@ -829,6 +829,32 @@ ban:
   _family: "R"
   eng_long: "A is a language."
   eng_short: "language"
+jva:
+  _family: "R"
+  eng_long: "A welcomes [E] to I."
+  eng_short: "welcomes"
+stu:
+  _family: "R"
+  eng_long: "A is an inherent place/position/location of [E]."
+  eng_short: "location"
+sfel:
+  _family: "R"
+  eng_long: "A serves [E] with service I0."
+  eng_short: "serves"
+sko:
+  _family: "R"
+  eng_long: "A is the internet/a cyberspace."
+  eng_short: "internet"
+zar:
+  _family: "R"
+  eng_long: "A approves of/gives favor to plan/action [E0]."
+  eng_short: "approves"
+ctay:
+  _family: "R"
+  eng_long: "A has authority over matter/sphjere/persons E."
+  eng_short: "authority"
+
+
 
 # Compounds (2):
 eberban:
@@ -915,3 +941,11 @@ etweyjqn:
   _family: "C2"
   eng_long: "A is a December."
   eng_short: "December"
+eskosfel:
+  _family: "C2"
+  eng_long: "A is a computer server serving clients [E] with service I0."
+  eng_short: "server"
+ectayzar:
+  _family: "C2"
+  eng_long: "A is official, approved by authority E."
+  eng_short: "official"
