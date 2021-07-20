@@ -1,0 +1,919 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>eberban Reference Grammar</title>
+                <meta name="robots" content="noindex" />
+                
+
+        <!-- Custom HTML head -->
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+                <link rel="icon" href="favicon.svg">
+                        <link rel="shortcut icon" href="favicon.png">
+                <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+                <link rel="stylesheet" href="css/print.css" media="print">
+        
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+                <link rel="stylesheet" href="fonts/fonts.css">
+        
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+                <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+            </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="intro/intro.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="intro/morpho.html"><strong aria-hidden="true">1.1.</strong> Morphology</a></li><li class="chapter-item expanded "><a href="intro/phono.html"><strong aria-hidden="true">1.2.</strong> Phonology</a></li></ol></li><li class="chapter-item expanded "><a href="logic/intro.html"><strong aria-hidden="true">2.</strong> eberban logic</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="logic/propositional.html"><strong aria-hidden="true">2.1.</strong> Propositional logic</a></li><li class="chapter-item expanded "><a href="logic/first_order.html"><strong aria-hidden="true">2.2.</strong> First-order logic</a></li><li class="chapter-item expanded "><a href="logic/second_order.html"><strong aria-hidden="true">2.3.</strong> Second-order logic</a></li></ol></li><li class="chapter-item expanded "><a href="units/intro.html"><strong aria-hidden="true">3.</strong> Predicate units</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="units/R.html"><strong aria-hidden="true">3.1.</strong> Root words (R)</a></li><li class="chapter-item expanded "><a href="units/MA.html"><strong aria-hidden="true">3.2.</strong> Intrinsic variables (MA)</a></li><li class="chapter-item expanded "><a href="units/KA_GA.html"><strong aria-hidden="true">3.3.</strong> Extrinsic variables (KA/GA)</a></li><li class="chapter-item expanded "><a href="units/TA.html"><strong aria-hidden="true">3.4.</strong> Numbers (TA)</a></li><li class="chapter-item expanded "><a href="units/B.html"><strong aria-hidden="true">3.5.</strong> Borrowings (B)</a></li><li class="chapter-item expanded "><a href="units/C.html"><strong aria-hidden="true">3.6.</strong> Compounds (C)</a></li><li class="chapter-item expanded "><a href="units/LA_LE_LO.html"><strong aria-hidden="true">3.7.</strong> Quotes (LA/LE/LO)</a></li></ol></li><li class="chapter-item expanded "><a href="bindings/intro.html"><strong aria-hidden="true">4.</strong> Predicate bindings</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="bindings/SA_ZA_BI.html"><strong aria-hidden="true">4.1.</strong> Unit transformations (SA/ZA/BI)</a></li><li class="chapter-item expanded "><a href="bindings/VA_FA.html"><strong aria-hidden="true">4.2.</strong> Explicit bindings (VA/FA)</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> Text structure</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="struct/PA_PI_PU.html"><strong aria-hidden="true">5.1.</strong> Propositions and paragraphs (PA/PI/PU)</a></li><li class="chapter-item expanded "><a href="struct/PO.html"><strong aria-hidden="true">5.2.</strong> Predicate definition (PO)</a></li><li class="chapter-item expanded "><a href="struct/BU.html"><strong aria-hidden="true">5.3.</strong> Lists (BU)</a></li><li class="chapter-item expanded "><a href="struct/DA_DI_DO_DU.html"><strong aria-hidden="true">5.4.</strong> Free modifiers (DA/DI/DO/DU)</a></li></ol></li><li class="chapter-item expanded "><a href="families.html"><strong aria-hidden="true">6.</strong> List of particle families</a></li></ol>            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                                                <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                                            </div>
+
+                    <h1 class="menu-title">eberban Reference Grammar</h1>
+
+                    <div class="right-buttons">
+                                                <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                                                                        
+                    </div>
+                </div>
+
+                                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="introduction"><a class="header" href="#introduction">Introduction</a></h1>
+<p><strong>eberban</strong> is a <a href="https://mw.lojban.org/papri/Lojban">Lojban</a>-inspired
+<a href="https://en.wikipedia.org/wiki/Constructed_language">constructed language</a> aimed
+at being simple, regular and expressive.</p>
+<ul>
+<li>Simple: eberban is made entirely out of predicates, which are manipulated with
+particles, following relatively few yet composable grammar rules.</li>
+<li>Regular: particles are organized into families, each with a unique prefix,
+enabling quick recognition and accelerating learning.</li>
+<li>Expressive: predicates can be combined and transformed in a variety of ways,
+greatly increasing the expressive power of the language.</li>
+</ul>
+<p>This book will provide a detailed tour of the language, covering its concepts
+and grammar.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="morphology"><a class="header" href="#morphology">Morphology</a></h1>
+<p>The morphology of eberban is composed of 5 vowels (<strong>a, e, i, o, u</strong>), 16
+consonants (<strong>b, c, d, f, g, j, k, l, m, n, p, r, s, t, v, z</strong>) and a
+semi-consonant <strong>h</strong>, for a total of 22 letters. There is also one symbol <strong>'</strong>
+(<strong>.</strong> is also accepted) marking word boundary, which is optional in written
+media as long as there are spaces alongside it. Among the consonants, two
+special ones are designated as <strong>sonorants</strong> : <strong>n</strong> and <strong>r</strong>.</p>
+<p>Vowels and <strong>h</strong> can appear in clusters. <strong>h</strong> can appear only between 2 vowels,
+and the same vowel cannot appear more than one in a row. We call these <em>vowel
+clusters</em>.</p>
+<h2 id="words"><a class="header" href="#words">Words</a></h2>
+<p>Letters may be combined to form <em>words</em>. There are two main types of words:
+<em>particles</em> and <em>roots</em>. Particles exert grammatical functions, while roots
+denote concepts with an intrinsic meaning, such as &quot;cat&quot;, &quot;language&quot; or &quot;teach&quot;.
+Particles are organised in families sharing the same grammar and usually
+starting with the same consonnant.</p>
+<p>There are also 2 other types of words : <em>compounds</em> and <em>borrowings</em>. Compounds
+are made from one or multiple smaller words, while borrowings allows to imports
+foreign words or names. Compounds starts with <strong>a, e, i, o</strong> and borrowings with
+<strong>u</strong>.</p>
+<p>Borrowings must end in a vowel which can be followed by a sonorant. In written
+media it must be followed by a space or word boundary marker, while in speech
+the penultimate vowel must be stressed.</p>
+<blockquote>
+<p><strong>Remark:</strong> If you are familiar with Lojban, you may view particles as
+analogous to cmavo, roots to gismu, compounds to lujvo and borrowings to
+fu'ivla/cmevla.</p>
+</blockquote>
+<p>Particles starts with a non-sonorant consonant and can't contain a sonorant.</p>
+<p>Roots can either start with a non-sonorant consonant but then contain at least
+one sonorant, or start with a permissible consonant pair and any number of
+sonorants. Sonorants can appear as the second consonant of an initial pair,
+between vowel clusters and at the end of roots.</p>
+<p>All words starting with a vowel must be preceded by a pause (<strong>'</strong> and/or
+space). In written media, a sequence of words is typically, but not necessarily,
+separated by spaces (&quot; &quot;).</p>
+<blockquote>
+<p><strong>For the advanced reader:</strong> you may have noticed that all words start with
+either a vowel (preceded by a pause), or a non-sonorant; and that all words
+end with either a vowel or a sonorant. This is by design.
+As we will later see, these seemingly artificial restrictions involving
+sonorants ensure that, even if words (except borrowings) are strung together
+without any spaces between them, they can still be uniquely decomposed (i.e.
+spaces can be deterministically added back). This may seem unimportant, and
+indeed in written media spaces are not particularly obnoxious – they
+are recommended, even. But in spoken form spaces correspond to pauses, and
+this unique decomposition property suddenly becomes important: it means that,
+while speaking, we do not need to pause between every two words! For our
+fellow language nerds out there: this cool property is also known as
+self-segmenting morphophonology :-)</p>
+<p>Additionally, the penultimate vowel of borrowings is stressed, allowing
+segmenting to work with borrowings as well.</p>
+</blockquote>
+<h2 id="permissible-consonant-pairs"><a class="header" href="#permissible-consonant-pairs">Permissible consonant pairs</a></h2>
+<p>Not all consonant pairs are allowed in eberban. The following table lists all
+permissible consonant pairs.</p>
+<table><thead><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td>cp</td><td>ct</td><td>ck</td><td>cf</td><td>cm</td><td>cn</td><td>cl</td><td>cr</td></tr>
+<tr><td>sp</td><td>st</td><td>sk</td><td>sf</td><td>sm</td><td>sn</td><td>sl</td><td>sr</td></tr>
+<tr><td>jb</td><td>jd</td><td>jg</td><td>jv</td><td>jm</td><td>jn</td><td>jl</td><td>jr</td></tr>
+<tr><td>zb</td><td>zd</td><td>zg</td><td>zv</td><td>zm</td><td>zn</td><td>zl</td><td>zr</td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td> </td></tr>
+<tr><td>pl</td><td>pr</td><td>tl</td><td>tr</td><td>kl</td><td>kr</td><td>fl</td><td>fr</td></tr>
+<tr><td>bl</td><td>br</td><td>dl</td><td>dr</td><td>gl</td><td>gr</td><td>vl</td><td>vr</td></tr>
+<tr><td>ml</td><td>mr</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td> </td></tr>
+<tr><td>tc</td><td>ts</td><td>dj</td><td>dz</td><td>kc</td><td>ks</td><td>gj</td><td>gz</td></tr>
+<tr><td>pc</td><td>ps</td><td>bj</td><td>bz</td><td></td><td></td><td></td><td></td></tr>
+</tbody></table>
+<h2 id="permissible-consonnant-clusters-in-borrowings"><a class="header" href="#permissible-consonnant-clusters-in-borrowings">Permissible consonnant clusters in borrowings</a></h2>
+<p>Borrowings have more relaxed rules regarding allowed consonnant clusters. A
+maximum of 3 consonnants in a row are allowed, and they can't all be sonorants.
+A consonnant cannot be followed by the same one.</p>
+<p>Consonnants are split into 2 categories called <strong>voiced</strong> (b, d, g, j, v, z) and
+<strong>unvoiced</strong> (c, f, k, p, s, t). A <strong>voiced</strong> consonnant cannot be followed by
+an <strong>unvoiced</strong> one, and vice-versa.</p>
+<p>Additionnaly the following rules applies :</p>
+<table><thead><tr><th>Consonnant</th><th>Can't be followed by</th></tr></thead><tbody>
+<tr><td>j</td><td>z</td></tr>
+<tr><td>z</td><td>j</td></tr>
+<tr><td>s</td><td>c</td></tr>
+<tr><td>c</td><td>s</td></tr>
+</tbody></table>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="phonology"><a class="header" href="#phonology">Phonology</a></h1>
+<table><thead><tr><th>Letter</th><th>IPA</th><th>Description</th></tr></thead><tbody>
+<tr><td>a</td><td>[a], [ɑ]</td><td>an open vowel</td></tr>
+<tr><td>e</td><td>[ɛ], [e]</td><td>a front mid vowel</td></tr>
+<tr><td>i</td><td>[i], [j], [ji], [ij]</td><td>a front close vowel</td></tr>
+<tr><td>o</td><td>[o], [ɔ]</td><td>a back mid vowel</td></tr>
+<tr><td>u</td><td>[u], [w], [wu], [uw]</td><td>a back close vowel</td></tr>
+<tr><td> </td><td></td><td></td></tr>
+<tr><td>h</td><td>[h]</td><td>an unvoiced glottal spirant</td></tr>
+<tr><td>'</td><td>[ʔ]</td><td>a glottal stop or a pause</td></tr>
+<tr><td>n</td><td>[n], [ŋ]</td><td>a voiced dental or velar nasal</td></tr>
+<tr><td>r</td><td>[r], [ɹ], [ɾ], [ʀ]</td><td>a rhotic sound</td></tr>
+<tr><td> </td><td></td><td></td></tr>
+<tr><td>p</td><td>[p]</td><td>an unvoiced bilabial stop</td></tr>
+<tr><td>t</td><td>[t]</td><td>an unvoiced dental/alveolar stop</td></tr>
+<tr><td>k</td><td>[k]</td><td>an unvoiced velar stop</td></tr>
+<tr><td>f</td><td>[f]</td><td>an unvoiced labiodental fricative</td></tr>
+<tr><td>s</td><td>[s]</td><td>an unvoiced alveolar sibilant</td></tr>
+<tr><td>c</td><td>[ʃ], [ʂ]</td><td>an unvoiced coronal sibilant</td></tr>
+<tr><td>l</td><td>[l]</td><td>a voiced lateral approximant</td></tr>
+<tr><td> </td><td></td><td></td></tr>
+<tr><td>b</td><td>[b]</td><td>a voiced bilabial stop</td></tr>
+<tr><td>d</td><td>[d]</td><td>a voiced dental/alveolar stop</td></tr>
+<tr><td>g</td><td>[ɡ]</td><td>a voiced velar stop</td></tr>
+<tr><td>v</td><td>[v]</td><td>a voiced labiodental fricative</td></tr>
+<tr><td>z</td><td>[z]</td><td>a voiced alveolar sibilant</td></tr>
+<tr><td>j</td><td>[ʒ], [ʐ]</td><td>a voiced coronal sibilant</td></tr>
+<tr><td>m</td><td>[m]</td><td>a voiced bilabial nasal</td></tr>
+</tbody></table>
+<h2 id="resources"><a class="header" href="#resources">Resources</a></h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/IPA_vowel_chart_with_audio">IPA vowel chart with audio</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Template:IPA_chart_pulmonic_consonants_with_audio">IPA pulmonic consonants with audio</a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="eberban-logic"><a class="header" href="#eberban-logic">eberban logic</a></h1>
+<p>eberban is based on <strong>second-order logic</strong>, which is an extension of
+<strong>first-order/predicate logic</strong>, itself an extension of <strong>propositional logic</strong>.
+The following chapters will quickly explain each logic and how they relate
+to eberban.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="propositional-logic"><a class="header" href="#propositional-logic">Propositional logic</a></h1>
+<p>A <strong>proposition</strong> or <strong>statement</strong> is anything that has a <strong>truth value</strong> :
+which can be <strong>true</strong> or <strong>false</strong>.</p>
+<blockquote>
+<p>A cat drinks milk.</p>
+</blockquote>
+<p>This is a proposition, as it can be either true or false. </p>
+<p>Compound propositions can be made by connecting propositions with logicial
+connectives, such as AND (\(\wedge\)) or OR (\(\vee\)).</p>
+<blockquote>
+<p>I go to the store AND the store is open.</p>
+</blockquote>
+<p>This entire proposition is true only if both inner propositions are true.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="first-order-logic"><a class="header" href="#first-order-logic">First order logic</a></h1>
+<p>It is possible to decompose the first proposition into 2 kinds of &quot;things&quot; :
+&quot;drinks&quot;, which is a relation, and &quot;a cat&quot; or &quot;milk&quot;, which are individuals or
+objects that satisfy this relation. In a more general case, a <strong>predicate</strong> is a
+proposition template with one or more <strong>open blanks</strong> (called <strong>places</strong>) that
+must be filled in to make a complete proposition with a truth value.</p>
+<p>The verb &quot;drinks&quot; can be seen as a predicate <code>(A) drinks (E)</code>, where <code>(A)</code> and
+<code>(E)</code> represents open blanks. We can use variables (written in lowercase) to
+fill these blanks and write :</p>
+<blockquote>
+<p>\(
+\exists \color{cyan}{a} \exists \color{magenta}{e} \
+\text{drinks}(\color{cyan}{a},\color{magenta}{e})
+\)</p>
+<p>There exist an \(\color{cyan}{a}\) and there exist an
+\(\color{magenta}{e}\) such that \(\color{cyan}{a}\) drinks
+\(\color{magenta}{e}\).</p>
+</blockquote>
+<p>&quot;A cat&quot; can be seen as an individual which fills the <code>A</code> place of the predicate
+<code>(A) drinks (E)</code>, but also of the predicate <code>(A) is a cat</code>. The entire sentence
+can thus be written as :</p>
+<blockquote>
+<p>\(
+\exists \color{cyan}{a} \:
+\text{is-a-cat}(\color{cyan}{a}) \wedge
+\exists \color{magenta}{e} \:
+\text{drinks}(\color{cyan}{a},\color{magenta}{e}) \wedge
+\text{is-milk}(\color{magenta}{e})
+\)</p>
+</blockquote>
+<p>In eberban, each root word defines such a predicate, and the chaining of these
+predicates express how the existential variables are shared between them, while
+the grammar provide tools to deviate from the default set of rules.</p>
+<p>The above sentence can be translated in eberban as <em>mlian puana luenu</em>, with the
+following roots definitions :</p>
+<ul>
+<li><strong>mlian:</strong> <code>(A) is a cat.</code></li>
+<li><strong>puana:</strong> <code>(A) drinks [E].</code></li>
+<li><strong>luenu:</strong> <code>(A) is milk.</code></li>
+</ul>
+<p>In this book, the translations from eberban sentences to logic will be made by
+having usually one line per root word, \(S_n\) lines expressing statements
+while \(F_n\) express formulas that are embeded in other statements or
+formulas.</p>
+<p>\[
+S_1 = \exists \color{cyan}{a_1} [\text{mlian}(\color{cyan}{a_1}) \wedge F_2] \\
+F_2 = \exists \color{magenta}{e_2} [\text{puana}(\color{cyan}{a_1}, \color{magenta}{e_2}) \wedge F_3] \\
+F_3 = [\text{luenu}(\color{magenta}{e_2})]
+\]</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="second-order-logic"><a class="header" href="#second-order-logic">Second-order logic</a></h1>
+<p>Second-order logic adds predicate variables in addition to individual variables,
+with predicate expecting other predicates as parameters.</p>
+<p>The eberban sentence <em>mi don tun mlian</em> means &quot;I like all cats&quot;.</p>
+<blockquote>
+<ul>
+<li><strong>mi:</strong> <code>(A) is me/a speaker/author.</code></li>
+<li><strong>don:</strong> <code>(A) likes [E].</code></li>
+<li><strong>tun:</strong> <code>(A) is everything that satisfies [E1].</code></li>
+<li><strong>mlian:</strong> <code>(A) is a cat.</code></li>
+</ul>
+<p><code>E1</code> means the <code>E</code> place expects a predicate with 1 argument.</p>
+</blockquote>
+<p>Translated into logical notation we get :</p>
+<p>\[
+S_1 = \exists a_1 [\text{mi}(a_1)      \wedge F_2] \\
+F_2 = \exists e_2 [\text{don}(a_1,e_2) \wedge F_3] \\
+F_3 = \color{cyan}{\exists E_3} [\text{tun}(e_2,\color{cyan}{E_3}) \wedge F_4] \\
+F_4 = \color{magenta}{\forall a_4} (\color{cyan}{E_3}(\color{magenta}{a_4})
+\leftrightarrow [\text{mlian}(\color{magenta}{a_4})])
+\]</p>
+<blockquote>
+<p>\(F_4\) is read as &quot;For all \(\color{magenta}{a_4}\),
+\(\color{cyan}{E_3}(\color{magenta}{a_4})\) is equivalent to
+\(mlian(\color{magenta}{a_4})\)&quot;. This notation allow to define
+\(\color{cyan}{E_3}\) using some arguments that will be provided by <strong>tun</strong>.</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="predicate-units"><a class="header" href="#predicate-units">Predicate units</a></h1>
+<p>eberban provides multiple ways to optain what are called <strong>predicate units</strong>,
+which are chained together with bindings to express complex statements.</p>
+<p>The following chapters list almost all ways to make predicate units.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="root-words"><a class="header" href="#root-words">Root words</a></h1>
+<p>Root words allows to express concepts of the real world and make the vast
+majority of the eberban dictionnary.</p>
+<blockquote>
+<p><strong>Example of words :</strong></p>
+<p><strong>sfe :</strong> <code>(A) is female.</code><br />
+<strong>sni :</strong> <code>(A) greets/say hello to [E].</code><br />
+<strong>kcia :</strong> <code>(A) [tool] is used to make [I0] [purpose] true.</code></p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="intrinsic-variables-ma"><a class="header" href="#intrinsic-variables-ma">Intrinsic variables (MA)</a></h1>
+<p>Intrinsic variables (<strong>MA</strong> family) are particles providing predicates about the
+discourse itself. All particles starting with <strong>m</strong> are member of <strong>MA</strong>.</p>
+<h3 id="pronouns"><a class="header" href="#pronouns">Pronouns</a></h3>
+<p>Pronouns are expressed with the following particles :</p>
+<table><thead><tr><th>Word</th><th>Definition</th></tr></thead><tbody>
+<tr><td>ma</td><td><code>(A) is not bound outside of this scope.</code></td></tr>
+<tr><td>mi</td><td><code>(A) is I/a speaker/author.</code></td></tr>
+<tr><td>mo</td><td><code>(A) is you, a listener.</code></td></tr>
+<tr><td>mio</td><td><code>(A) is I/a speaker/author or you, a listener.</code></td></tr>
+<tr><td>me</td><td><code>(A) is someone, neither a speaker or listener.</code></td></tr>
+<tr><td>mai</td><td><code>(A) is indefinite specific (a).</code></td></tr>
+<tr><td>mao</td><td><code>(A) is definite specific (the).</code></td></tr>
+<tr><td>mei</td><td><code>(A) is this here, near a speaker.</code></td></tr>
+<tr><td>meo</td><td><code>(A) is that here, near a listener.</code></td></tr>
+<tr><td>meu</td><td><code>(A) is that yonder, far from speaker and listener.</code></td></tr>
+</tbody></table>
+<h2 id="propositions"><a class="header" href="#propositions">Propositions</a></h2>
+<p>It is often useful to refer to other propositions.</p>
+<table><thead><tr><th>Word</th><th>Definition</th></tr></thead><tbody>
+<tr><td>mua</td><td>the last proposition</td></tr>
+<tr><td>mue</td><td>the proposition in which this one is embeded (used in abstractions)</td></tr>
+<tr><td>mui</td><td>current proposition</td></tr>
+<tr><td>muo</td><td>the next proposition (infered from context, usually the next)</td></tr>
+</tbody></table>
+<p>Counting takes only into account complete proposition, and ignore proposition
+that are currently being defined when the word is used.</p>
+<p>Using <a href="units/../struct/DA_DI_DO_DU.html">subscripts <strong>DI</strong></a> allow to refer to more distant
+predicates.</p>
+<h2 id="open-place-ba"><a class="header" href="#open-place-ba">Open place (BA)</a></h2>
+<table><thead><tr><th>Word</th><th>Definition</th></tr></thead><tbody>
+<tr><td>ba</td><td>binds a variable within an scope that represents an open space.</td></tr>
+</tbody></table>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="extrinsic-variables-kaga"><a class="header" href="#extrinsic-variables-kaga">Extrinsic variables (KA/GA)</a></h1>
+<p>The <strong>KA</strong> and <strong>GA</strong> families contains particles that can be assigned and used
+anywhere in the following text.</p>
+<p>All members of the <strong>KA</strong> family (any particle starting with <strong>k</strong>) will bind
+with an &quot;individual&quot; variable of the second-order logic. Members of the <strong>GA</strong>
+family (any particle starting with <strong>g</strong>) however will bind with a predicate
+variable. <strong>KA</strong> can thus be used to refer back to common individuals similarly
+to pronouns, while <strong>GA</strong> can allow to define a complex predicate that can be
+used multiple times afterward.</p>
+<p>In a proposition <strong>KA/GA</strong> can be prefixed with <strong>bo</strong> to discard the previous
+variable and create a new independent one. <strong>bo GA</strong> will only declare that
+there exist a predicate such that the statement is true. However a more useful
+usage is to declare its place structure with a sentence <a href="units/../struct/PO.html">using
+<strong>po</strong></a>.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="numbers-ta"><a class="header" href="#numbers-ta">Numbers (TA)</a></h1>
+<p>The <strong>TA</strong> family represents digits or concepts to express numbers.  Multiple
+<strong>TA</strong> can be chained together, and the final chain acts asone predicate.</p>
+<p>By default number represent a unique scalar value. However <em>vector tags</em> can be
+used to describe vectors composed of multiple scalar values. The meaning of each
+part of the vector will be defined by the predicates it will be used with. Tag
+is placed before the number it qualifies, and a number not starting with a tag
+is considered to have an implicit <strong>teha</strong>.</p>
+<p>If it doesn't have a decimal part (<strong>te</strong>), no vector tag and is greater than 0
+then it is a <strong>cardinal</strong> with definition :</p>
+<pre><code class="language-eng">(A) is (a group of) [number] things satisfying [E1].
+</code></pre>
+<p>Otherwise its an <strong>abstract number</strong> with definition :</p>
+<pre><code class="language-eng">(A) is the (abstract) number [number] with dimension/unit [E1] (default:
+contextual, usually explicited by another unit).
+</code></pre>
+<blockquote>
+<p>You can have a natural abstract number by adding a final <strong>te</strong>, which will
+not change the value but count as a decimal part.</p>
+</blockquote>
+<h2 id="elidible-terminator-be"><a class="header" href="#elidible-terminator-be">Elidible terminator (BE)</a></h2>
+<p>The chain be terminated with the word <strong>be</strong>, which is often elidable. In fact,
+it is only needed to separate 2 adjacent chains that <strong>should not</strong> merge into a
+single one.</p>
+<p><strong>bei</strong> can be used after a <strong>cardinal</strong> to transform it into an <strong>ordinal</strong>
+with place structure :</p>
+<pre><code class="language-eng">(A) is the [number]th member of ordered set [E1].
+</code></pre>
+<h2 id="ta-members"><a class="header" href="#ta-members">TA members</a></h2>
+<table><thead><tr><th>Word</th><th>Digit</th><th>Word</th><th>Digit</th><th>Word</th><th>Digit</th><th>Word</th><th>Digit</th></tr></thead><tbody>
+<tr><td>ta</td><td>0</td><td>tia</td><td>4</td><td>tai</td><td>8</td><td>taia</td><td>C/12</td></tr>
+<tr><td>te</td><td>1</td><td>tie</td><td>5</td><td>tei</td><td>9</td><td>taie</td><td>D/13</td></tr>
+<tr><td>to</td><td>2</td><td>tio</td><td>6</td><td>toi</td><td>↊/A/10</td><td>taio</td><td>E/14</td></tr>
+<tr><td>tu</td><td>3</td><td>tiu</td><td>7</td><td>tui</td><td>↋/B/11</td><td>taiu</td><td>F/15</td></tr>
+</tbody></table>
+<p> </p>
+<table><thead><tr><th>Word</th><th>Definition</th><th>Word</th><th>Definition</th></tr></thead><tbody>
+<tr><td>ti</td><td>decimal separator</td><td>tiha</td><td><code>&lt;base digit. number&gt;</code> separator</td></tr>
+<tr><td>tihe</td><td><code>&lt;precise . approximation&gt;</code> separator</td><td>tihi</td><td><code>&lt;number . repeating part&gt;</code> separator</td></tr>
+<tr><td>tiho</td><td><code>&lt;numerator . denominator&gt;</code> separator</td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td> </td></tr>
+<tr><td>taha</td><td>\(base^3\) separator (kilo)</td><td>tahe</td><td>\(base^6\) separator (mega)</td></tr>
+<tr><td>taho</td><td>\(base^9\) separator (giga)</td><td>tahu</td><td>\(base^{12}\) separator (tera)</td></tr>
+<tr><td>tahia</td><td>\(base^{15}\) separator (peta)</td><td>tahie</td><td>\(base^{18}\) separator (exa)</td></tr>
+<tr><td>tahio</td><td>\(base^{21}\) separator (zetta)</td><td>tahiu</td><td>\(base^{24}\) separator (yotta)</td></tr>
+<tr><td></td><td></td><td></td><td> </td></tr>
+<tr><td>teha</td><td>Vector tag 0</td><td>tehe</td><td>Vector tag 1</td></tr>
+<tr><td>teho</td><td>Vector tag 2</td><td>tehu</td><td>Vector tag 3</td></tr>
+<tr><td>tehia</td><td>Vector tag 4</td><td>tehie</td><td>Vector tag 5</td></tr>
+<tr><td>tehio</td><td>Vector tag 6</td><td>tehiu</td><td>Vector tag 7</td></tr>
+<tr><td></td><td></td><td></td><td> </td></tr>
+<tr><td>tae</td><td>negative sign</td><td></td><td></td></tr>
+</tbody></table>
+<blockquote>
+<p><code>tiha</code> &quot;base digit&quot; is the highest digit possible in that base. Base 10 is
+thus <code>tei (9) tiha ..</code>, base 6 is <code>tie (5) tiha ..</code>, ..</p>
+</blockquote>
+<blockquote>
+<p>TODO : Explain multiple \(base^n\) separators.</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="borrowings-b"><a class="header" href="#borrowings-b">Borrowings (B)</a></h1>
+<p>Borrowings allow importing words from other languages which would be difficult
+to translate and express using root words, such as proper names, names of
+species and cultural concepts.</p>
+<p>A borrowing starts with the letter <strong>u</strong>, followed by the borrowed word. The
+borrowed word should be a phonetic retranscription in the phonology and
+morphology of eberban. Incompatible chains of vowels should be borrowed using a
+buffer letter such as <em>h</em>. Incompatible chains of consonants should be borrowed
+using a buffer vowel such as <em>i</em>. If the borrowed word starts with <strong>u</strong> then
+the prefix is <strong>u'</strong> instead of <strong>u</strong>. The borrowed word must end with a vowel
+which can be followed by a single sonorant.</p>
+<p>A chain of multiple borrowings will count as only one predicate unit composed of
+multiple parts. To prevent 2 borrowings to form only one predicate unit,
+separate them with <strong>be</strong>.</p>
+<p>Their place structure is <code>(A) is a [word]</code>. Having a generic place structure
+makes comprehension easier to a listener/reader who might not be familiar with
+the borrowed word.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="compounds-c"><a class="header" href="#compounds-c">Compounds (C)</a></h1>
+<p>Providing a root for every concept would be extremely impractical. Complex
+concepts are often built upon multiple more primitive concepts, and compounds
+are used for this purpose.</p>
+<p>Compounds allow transforming any string of valid eberban words (particles, roots
+or even borrowings) into a single unit, <strong>ignoring their grammatical rules</strong> but
+keeping (to a certain extent) their meaning.</p>
+<p>A compound is first prefixed by the particles <strong>e, i, o</strong>, respectively starting a
+compound composed of 2, 3, or 4 words. If a compound is made of more than 4
+words, it must be prefixed and suffixed by <strong>a</strong>.</p>
+<blockquote>
+<p>Note : it's totally valid to have a <em>a-compound</em> with less than 5 words,
+however using e/i/o is prefered. They're equivalent and have the same meaning,
+and only the canonical (shorter one) will be listed in the dictionary.</p>
+</blockquote>
+<p>If the first word starts with <strong>u</strong> (a borrowing) then the pause before this
+<strong>u</strong> is optional.</p>
+<p>A compound have a <strong>unique, fixed meaning which is defined in the dictionary</strong>,
+and while its place structure can be arbitrary, it usually provides places taken
+from its individual components. Usually the most important word is the rightmost
+one, and additional words are added to the left to help narrow down the meaning,
+yielding greater precision.</p>
+<h2 id="examples"><a class="header" href="#examples">Examples</a></h2>
+<h3 id="eberban"><a class="header" href="#eberban">eberban</a></h3>
+<p><code>(A) (quote) is expressed in eberban language (E).</code></p>
+<ul>
+<li><strong>ber :</strong> <code>(A) reflects this language (eberban).</code></li>
+<li><strong>ban :</strong> <code>(A) (quote) is expressed in language [E].</code></li>
+</ul>
+<h3 id="eufranseban"><a class="header" href="#eufranseban">eufranse'ban</a></h3>
+<p><code>(A) (quote) is expressed in the French language (E).</code></p>
+<ul>
+<li><strong>ufranse' :</strong> borrowing of &quot;french&quot; (&quot;français&quot; in french).</li>
+<li><strong>ban :</strong> <code>(A) (quote) is expressed in language [E].</code></li>
+</ul>
+<blockquote>
+<p>How to borrow cultural words may change in the future.</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="quotes-lalelo"><a class="header" href="#quotes-lalelo">Quotes (LA/LE/LO)</a></h1>
+<p>Quotes allow embedding text into the discourse.</p>
+<h2 id="grammatical-quote-la"><a class="header" href="#grammatical-quote-la">Grammatical quote [LA]</a></h2>
+<p><strong>la</strong> allows quoting any grammatical eberban text, which is terminated with
+<strong>lai</strong>. Being grammatical, the text can be parsed and analysed by the parser.
+It can also contain inner <strong>la</strong> quotes, as a <strong>lai</strong> will match its opening
+<strong>la</strong>. Its meaning is <code>(A) is text [text]</code>.</p>
+<h2 id="single-word-quote-le"><a class="header" href="#single-word-quote-le">Single word quote [LE]</a></h2>
+<p><strong>le</strong> allows quoting the next word, ignoring its grammar. The quote has the
+place structure <code>(A) is word [word]</code>. <strong>lei</strong> will instead express the family of
+the word (specific particle family or root) : <code>lei lai = (A) is a LA particle</code>. </p>
+<p><strong>leu</strong> provides a predicate describing the meaning of the following particle.
+This predicate can be used to answer questions asked using <strong>du GA</strong>.</p>
+<h2 id="foreign-quote-lo"><a class="header" href="#foreign-quote-lo">Foreign quote [LO]</a></h2>
+<p><strong>lo</strong> allows quoting anything such as foreign text or ungrammatical eberban
+text. <strong>lo</strong> is followed by a <strong>single</strong> arbitrary valid eberban word (no
+compounds or borrowing), which has the role of a delimiter. The quote ends when
+this word appear again with spaces before it. The delimiter word should not
+appear in the text, either written with same letters or pronounced the same way,
+as it could lead to ambiguities regarding where the quote ends in written text
+and/or in vocal speech. Its meaning is <code>(A) is text [text]</code>.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="predicate-bindings"><a class="header" href="#predicate-bindings">Predicate bindings</a></h1>
+<p>Each predicate unit has a <strong>left chaining place</strong> and a <strong>right chaining
+place</strong>, which will define which of its variables will be bound with other
+predicate units variables.</p>
+<p>By default, both are the <code>(A)</code> place. If a definition contains a place written
+in brackets <code>[]</code> (thus called a &quot;bracketed place&quot;), this place becomes the
+<strong>right chaining place</strong>. The families described in the following chapters allow
+to extend from this default behavior.</p>
+<p>When predicates are chained after each other, for each pair of consecutive
+units, the left unit right chaining place will be bound to the right unit left
+chaining place. This is called <strong>sequential binding</strong>.</p>
+<p>However, if the left unit right chaining place expects a predicate, it will be
+bound to the right unit itself. The parameters of this predicate arguments will
+be <code>(A)</code>, <code>(E)</code>, ... in order.</p>
+<p>\[
+S_1 = \exists a_1 [\text{mi}(\color{cyan}{a_1}) \wedge F_2] \\
+F_2 = \exists e_2 [\text{don}(\color{cyan}{a_1},\color{purple}{e_2}) \wedge F_3] \\
+F_3 = \exists E_3 [\text{tun}(\color{purple}{e_2},\color{magenta}{E_3}) \wedge F_4] \\
+F_4 = \forall a_4 (\color{magenta}{E_3}(a_4) \leftrightarrow [\text{mlian}(a_4)])
+\]</p>
+<ul>
+<li>In \(F_2\), \(\color{cyan}{a_1}\) is chained because <strong>mi</strong> don't have a
+bracket  place.</li>
+<li>In \(F_3\), \(\color{purple}{e_2}\) is chained because <strong>don</strong> has a
+<code>[E]</code> individual bracket place.</li>
+<li>In \(F_4\), \(\color{magenta}{E_3}\) is chained because <strong>tun</strong> has a
+<code>[E1]</code> predicate bracket place.</li>
+</ul>
+<blockquote>
+<p>After a proposition is complete, all variables are turned into constants that
+can be refered to in future propositions.</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="unit-transformations-sazabi"><a class="header" href="#unit-transformations-sazabi">Unit transformations (SA/ZA/BI)</a></h1>
+<h2 id="sa"><a class="header" href="#sa">SA</a></h2>
+<p><strong>SA</strong> allow to change which is the <strong>left chaining place</strong> of the following
+predicate unit. Other <strong>SA</strong> allow to use special variables that are related
+to the predicate unit. If the predicate unit don't have a bracket place, the
+<strong>right chaining place</strong> is also modified.</p>
+<table><thead><tr><th>Word</th><th>Definition</th></tr></thead><tbody>
+<tr><td>sa</td><td>tags <code>A</code> place</td></tr>
+<tr><td>se</td><td>tags <code>E</code> place</td></tr>
+<tr><td>si</td><td>tags <code>I</code> place</td></tr>
+<tr><td>so</td><td>tags <code>O</code> place</td></tr>
+</tbody></table>
+<blockquote>
+<p>If we define <strong>unit3</strong> as <code>(A) ... (E) ... [I]</code>, it will by default have this
+kind of bindings :</p>
+<p>\[F_1 = \exists \color{magenta}{e_1} \exists i_1
+[\text{unit3}(\color{cyan}{x},\color{magenta}{e_1},i_1) \wedge F_2] \]</p>
+<p>Here \(\color{cyan}{x}\) represents the variable of the previous unit this
+unit is bound to. In practice \(\color{cyan}{x}\) must be replaced by a real
+variable name.</p>
+<hr />
+<p>If it is prefixed by <strong>se</strong>, the bindings will be changed to :</p>
+<p>\[F_1 = \exists \color{magenta}{a_1} \exists i_1
+[\text{unit3}(\color{magenta}{a_1},\color{cyan}{x},i_1) \wedge F_2] \]</p>
+<p>Notice \(\color{cyan}{x}\) is now used as the second argument of <strong>unit3</strong>,
+and the existential variable now corresponds to the <code>A</code> place. </p>
+<hr />
+<p>Since <strong>unit3</strong> has an <code>I</code> <strong>bracket place</strong>, \(F_2\) will bind to
+\(i_1\). However for units that don't have a bracket place, \(F_2\) would
+bind to \(\color{cyan}{x}\).</p>
+<hr />
+<p><strong>SA</strong> works similarly with predicate bindings. Here is an example with <strong>si
+sa</strong>, bound to a 2-ary predicate place :</p>
+<p>\[
+F_1 = \forall i_1 \forall a_1 [\color{cyan}{X_0}(i_1, a_1) \leftrightarrow
+(\exists e_1 [\text{unit3}(a_1,e_1,i_1) \wedge F_2])]
+\]</p>
+<p>If the number of <strong>SA</strong> is less than the arity, <code>A</code>, <code>E</code>, etc in order are
+used, skipping places that have been chosen with <strong>SA</strong>. It is allowed to use
+the same <strong>SA</strong>, which states the both variables are also equal.</p>
+</blockquote>
+<h2 id="za"><a class="header" href="#za">ZA</a></h2>
+<p><strong>ZA</strong> allow to change the place structure or meaning of the following predicate
+unit. </p>
+<table><thead><tr><th>Word</th><th>Definition</th></tr></thead><tbody>
+<tr><td>za</td><td><code>(A) is named [predicate-(A)].</code></td></tr>
+<tr><td>zai</td><td>ZA question : what transformation would make the proposition true ?</td></tr>
+<tr><td>ze</td><td>Use the previous instance of this unit.</td></tr>
+<tr><td>zi</td><td>Narrow-scope negation.</td></tr>
+<tr><td>zo</td><td><code>(A) is something referred to by [predicate-(A)].</code></td></tr>
+<tr><td>zoi</td><td><code>(A) is a reference/symbol refering to [predicate].</code></td></tr>
+</tbody></table>
+<blockquote>
+<p><strong>za</strong> allow to make a name from a place of the unit. Other bindings will be
+made with this <em>name variable</em> instead of the original places.</p>
+<p>\[
+F_1 = \exists \color{magenta}{a_1} [\text{is-named}(\color{cyan}{x},
+\color{magenta}{a_1}) \wedge F^\prime_1 \wedge F_2]\\
+F^\prime_1 = \exists e_1 \exists i_1 [\text{unit3}(a_1,e_1,i_1)]
+\]</p>
+<p>The place can be selected by adding <strong>SA</strong> after <strong>za</strong>.</p>
+<hr />
+<p><strong>zo</strong> is similar to <strong>za</strong> but express something that is refered by the
+predicate <code>A</code> place. The <code>A</code> place of the predicate is a symbol for this new
+<code>A</code> place.</p>
+<hr />
+<p><strong>ze</strong> allow to re-use a previous instance of this unit and all of its
+variables as if all bindings were made on the original.</p>
+</blockquote>
+<blockquote>
+<p><strong>zoi</strong> is similar to <strong>za/zo</strong> but use the unit itself. Other bindings will
+be made with this <em>referred/symbol variable</em> instead of the original places.</p>
+<p>\[
+F_1 = \exists Z_1 [\text{is-symbol}(\color{cyan}{x}, Z_1) \wedge F^\prime_1
+\wedge F_2] \\
+F^\prime_1 = Z_1 \leftrightarrow (\exists a_1 \exists e_1 \exists i_1
+[\text{unit3}(a_1,e_1,i_1)])
+\]</p>
+</blockquote>
+<blockquote>
+<p>Prefixing by <strong>zi</strong> negates only the unit :</p>
+<p>\[F_1 = \exists e_1 \exists i_1
+[\color{cyan}{(\neg}\text{unit3}(x,e_1,i_1)\color{cyan}) \wedge F_2] \]</p>
+</blockquote>
+<h2 id="bi"><a class="header" href="#bi">BI</a></h2>
+<blockquote>
+<p>To also negate the existential variables and the bindings, <strong>bi</strong> must be used
+instead :</p>
+<p>\[F_1 = \color{magenta}{\neg(}\exists e_1 \exists i_1
+[\text{unit3}(x,e_1,i_1) \wedge F_2]\color{magenta}) \]</p>
+<p><strong>bi</strong> must be placed before any <strong>SA/ZA</strong>.</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="explicit-bindings-vafa"><a class="header" href="#explicit-bindings-vafa">Explicit bindings (VA/FA)</a></h1>
+<blockquote>
+<p>This chapter use outdated definitions.</p>
+</blockquote>
+<table><thead><tr><th>FA</th><th>VA</th><th>Definition</th></tr></thead><tbody>
+<tr><td>fa</td><td>va</td><td>Binds <code>A</code> place</td></tr>
+<tr><td>fe</td><td>ve</td><td>Binds <code>E</code> place</td></tr>
+<tr><td>fi</td><td>vi</td><td>Binds <code>I</code> place</td></tr>
+<tr><td>fo</td><td>vo</td><td>Binds <code>O</code> place</td></tr>
+<tr><td> </td><td></td><td></td></tr>
+<tr><td>fua</td><td></td><td>Binds same place</td></tr>
+<tr><td>fue</td><td></td><td>Binds next place</td></tr>
+</tbody></table>
+<p>If you want to bind a unit to another place than the default one, or perform
+multiple bindings on the unit, you can use <strong>VA</strong>, terminated by <strong>vai</strong>, to
+provide another binding. It is placed between the unit and a possible next
+sequential unit. Any additional binding to this same unit will then be made
+using <strong>FA</strong>, as <strong>VA</strong> would create an inner explicit binding.</p>
+<blockquote>
+<p><strong>Vocabulary :</strong></p>
+<ul>
+<li>jven: <code>(A) is a friend of [E].</code></li>
+<li>mi: <code>(A) is I/a speaker/author.</code></li>
+<li>zono: <code>(A) has area [E] (measure, meters^2 by default / object(s) with same area).</code></li>
+<li>vuno: <code>(A) is at a distance in space of [E] (mesure, meters by default / object with this length) from (I) (default: here).</code></li>
+<li>zbur: <code>(A) is a town/city.</code></li>
+<li>ter: <code>(A) is a small number (subjective/contextual) in dimension/unit [E1].</code></li>
+<li>tor: <code>(A) is a large number (subjective/contextual) in dimension/unit [E1].</code></li>
+<li>vier: <code>(A) visits [E] with guide (I).</code></li>
+</ul>
+<hr />
+<p><strong>Sentence without VA/FA :</strong> <em>mi vier zbur</em><br />
+I visit a city.</p>
+<p>\[
+S_1 = \exists a_1 [mi(a_1) \wedge F_2] \\
+F_2 = \exists e_2 \exists i_2 [vier(a_1, e_2, i_2) \wedge F_3] \\
+F_3 = zbur(e_2)
+\]</p>
+<hr />
+<p><strong>Sentence with VA/FA :</strong></p>
+<p><em>mi vier [vi mo vai] zbur [&lt;va vuno ter&gt; &lt;fa zono tor&gt; vai]</em><br />
+I visit (guided by you) a city (which is near (small in distance) and is large
+in size).</p>
+<p>\[
+S_1 = \exists a_1 [mi(a_1) \wedge F_2] \\
+F_2 = \exists e_2 \exists i_2 [vier(a_1, \color{magenta}{e_2}, i_2) \wedge
+\color{magenta}{F_{2:1}} \wedge F_3] \\
+\color{magenta}{F_{2:1}} = [mo(\color{magenta}{i_2})] \\
+F_3 = [zbur(\color{cyan}{e_2}) \wedge \color{cyan}{F_{3:1}} \wedge
+\color{cyan}{F_{3:3}}] \\
+\color{cyan}{F_{3:1}} = \exists e_{3:1} \exists i_{3:1}
+[vuno(\color{cyan}{i_2}, e_{3:1}, i_{3:1}) \wedge F_{3:2}] \\
+F_{3:2} = \exists e_{3:2} [ter(e_{3:1}, e_{3:2})] \\
+\color{cyan}{F_{3:3}} = \exists e_{3:3} \exists i_{3:3}
+[zono(\color{cyan}{i_2}, e_{3:3}, i_{3:3}) \wedge F_{3:4}] \\
+F_{3:4} = \exists e_{3:2} [tor(e_{3:3}, e_{3:4})] 
+\]</p>
+</blockquote>
+<p><strong>FA</strong> and <strong>VA</strong> contains the same particles having the same usage, with the
+only difference being that a <strong>VA</strong> is used for the first binding while a <strong>FA</strong>
+is used for subsequent bindings.</p>
+<p><strong>va/ve/vi/vo</strong> allow to choose which place is used in the binding.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="propositions-and-paragraphs-papipu"><a class="header" href="#propositions-and-paragraphs-papipu">Propositions and paragraphs (PA/PI/PU)</a></h1>
+<h2 id="proposition-pa--pai"><a class="header" href="#proposition-pa--pai">Proposition [PA + PAI]</a></h2>
+<p><strong>PA</strong> indicates the start of a sentence, while <strong>pai</strong> indicates the end of
+it. Both are elidable, meaning they can be removed if the text would not be
+parsed differenly. <strong>PA</strong> is often only used to separate propositions, while
+<strong>pai</strong> is more rarely used if something needs to be attached to a proposition a
+posteriori.</p>
+<p>Each member of <strong>PA</strong> encore a different illocution :</p>
+<ul>
+<li><strong>pa :</strong> assertive sentence, that can be believ or disbelieved, and is either true or false.</li>
+<li><strong>pae :</strong> vocative. Defines the listener as the <code>A</code> place of this scope.</li>
+<li><strong>pao :</strong> declarative sentence, that is true only because uttered (used for declarations, announcements, etc).</li>
+<li><strong>pau :</strong> directive sentence, that is requested, wished or ordered to be true.</li>
+</ul>
+<h2 id="predicate-arguments-pi"><a class="header" href="#predicate-arguments-pi">Predicate arguments [PI]</a></h2>
+<p>A predicate can be expressed by following <strong>PA/VA/FA</strong> with a list of
+<a href="struct/../units/KA_GA.html"><strong>KA/GA</strong></a> variables terminated by <strong>pi</strong>. Each
+<strong>KA/GA</strong> binds to the <code>A</code>, <code>E</code>, etc in order.
+Any <a href="struct/../units/MA.html"><strong>ma</strong></a> in the scope will add bind following places. If
+neither <strong>PI</strong> or <strong>ma</strong> are used then the scope have the same place structure
+as the first unit in this scope.</p>
+<h2 id="paragraphs-sections-chapters--pu"><a class="header" href="#paragraphs-sections-chapters--pu">Paragraphs, sections, chapters, ... [PU]</a></h2>
+<p>Propositions can be separated by particles of <strong>PU</strong> family, indicating a change
+in subject. While <strong>pu</strong> is a small change in subject and is analog to a
+paragraph separator; <strong>pua</strong>, <strong>pue</strong>, <strong>pui</strong>, <strong>puo</strong> each express an
+even greater change in subject, and can be used to separate subsections,
+sections, chapters, etc ...</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="predicate-definition-po"><a class="header" href="#predicate-definition-po">Predicate definition (PO)</a></h1>
+<p><strong>po</strong> allows to use a sentence to provide the definition of a <strong>GA</strong>
+variable, a root or a compound. It can be present alongside sentences or
+after the optional arguments of <strong>VA/FA</strong> scopes. It has an ellidable terminator
+<strong>poi</strong> than is used to separate the content of the definition and the content
+of the <strong>VA/FA</strong> scope. It is not necessary before a <strong>PA</strong> starting a sentence.</p>
+<blockquote>
+<p>Defining root or compound using PO should only be used when writing
+dictionnaries or when adding vocabulary based on borrowings.</p>
+</blockquote>
+<p>Another member of <strong>PO</strong> is <strong>poha</strong> that allows to ask a question. Each
+argument of the definition is an unknown information that the speaker is
+asking. No arguments only ask if the proposition is true or false.</p>
+<h2 id="exemple"><a class="header" href="#exemple">Exemple</a></h2>
+<p><em>po ga mlian dzo (poi)</em> (We define &quot;ga&quot; as the property of being a black cat.)
+<em>pa mi don tun ga</em> (I like all things that satisfies &quot;ga&quot;.)</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="lists-bu"><a class="header" href="#lists-bu">Lists (BU)</a></h1>
+<p>Particle <strong>bu</strong> will divide a scope into multiple subscopes being items
+of a list.</p>
+<p>Some predicates accepts list as argument, such as</p>
+<pre><code>kor: (A) is a plural value/group composed of [E].
+</code></pre>
+<blockquote>
+<p>TODO : Lists will allow to provide logical connectives and math operators
+as roots/compounds.</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="free-modifiers-dadidodu"><a class="header" href="#free-modifiers-dadidodu">Free modifiers (DA/DI/DO/DU)</a></h1>
+<p>Free modifiers allow to add information to almost anything. Modifier attached to
+grammatical starters or terminators apply to the whole object they define.</p>
+<h2 id="suffix-markers-da"><a class="header" href="#suffix-markers-da">Suffix markers [DA]</a></h2>
+<p>Suffix markers can be place before almost anything to add some informations.</p>
+<table><thead><tr><th>Word</th><th>Meaning</th></tr></thead><tbody>
+<tr><td>da</td><td>Emphasis indicator : the next word is especially emphasized.</td></tr>
+<tr><td>daha</td><td>Nonce-word indicator : the next word (usually a compound) may be non-standard.</td></tr>
+<tr><td>dahe</td><td>Next word is a metadata tag / hashtag.</td></tr>
+<tr><td>dae</td><td>However/but/in contrast.</td></tr>
+<tr><td>dai</td><td>Similarly.</td></tr>
+<tr><td>dao</td><td>Additionally.</td></tr>
+<tr><td>dau</td><td>Uniquely/only/solely.</td></tr>
+</tbody></table>
+<h2 id="subscript-di"><a class="header" href="#subscript-di">Subscript [DI]</a></h2>
+<p><strong>di</strong> attaches a number to a word. It can be used to be more
+precise when using a vague particle or use more variables.</p>
+<h2 id="parenthetical-note-do"><a class="header" href="#parenthetical-note-do">Parenthetical note [DO]</a></h2>
+<p><strong>do</strong> and it's terminator <strong>doi</strong> allow to add a parenthetical note. This note
+can be any valid eberban text.</p>
+<h2 id="override-du"><a class="header" href="#override-du">Override [DU]</a></h2>
+<p><strong>du</strong> followed by a single predicate word will override the meaning of the
+particle before based on the predicate. Useful to extend eberban grammar, and
+also to handle particle questions. Description predicate of a particule can
+be obtained with <strong>leu</strong>.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="list-of-particle-families"><a class="header" href="#list-of-particle-families">List of particle families</a></h1>
+<table><thead><tr><th>Family</th><th>Purpose</th></tr></thead><tbody>
+<tr><td><a href="units/MA.html"><strong>BA</strong></a></td><td>inline argument</td></tr>
+<tr><td><strong>BE</strong></td><td>miscellaneous terminator + <a href="../src/units/TA.html">ordinals</a></td></tr>
+<tr><td><a href="bindings/SA_ZA_BI.html"><strong>BI</strong></a></td><td>wide-scope negation</td></tr>
+<tr><td><a href="units/KA_GA.html"><strong>BO</strong></a></td><td>variable assignement</td></tr>
+<tr><td><a href="struct/BU.html"><strong>BU</strong></a></td><td>list separator</td></tr>
+<tr><td> </td><td></td></tr>
+<tr><td><a href="struct/DA_DI_DO_DU.html"><strong>DA</strong></a></td><td>free prefix</td></tr>
+<tr><td><a href="struct/DA_DI_DO_DU.html"><strong>DI</strong></a></td><td>free subscript</td></tr>
+<tr><td><a href="struct/DA_DI_DO_DU.html"><strong>DO</strong></a></td><td>free parenthetical starter</td></tr>
+<tr><td><a href="struct/DA_DI_DO_DU.html"><strong>DOI</strong></a></td><td>free parenthetical terminator</td></tr>
+<tr><td><a href="struct/DA_DI_DO_DU.html"><strong>DU</strong></a></td><td>free particle override</td></tr>
+<tr><td> </td><td></td></tr>
+<tr><td><a href="bindings/SA_ZA_BI.html"><strong>SA</strong></a></td><td>place binding tag</td></tr>
+<tr><td><a href="bindings/SA_ZA_BI.html"><strong>ZA</strong></a></td><td>predicate transformation</td></tr>
+<tr><td><a href="bindings/VA_FA.html"><strong>VA</strong></a></td><td>explicit switch + VA-scope</td></tr>
+<tr><td><a href="bindings/VA_FA.html"><strong>FA</strong></a></td><td>next explicit switch</td></tr>
+<tr><td><a href="bindings/VA_FA.html"><strong>VAI</strong></a></td><td>VA-scope terminator</td></tr>
+<tr><td> </td><td></td></tr>
+<tr><td><a href="units/KA_GA.html"><strong>GA</strong></a></td><td>predicate variables</td></tr>
+<tr><td><a href="units/KA_GA.html"><strong>KA</strong></a></td><td>individual variables</td></tr>
+<tr><td><a href="units/MA.html"><strong>MA</strong></a></td><td>discourse predicates</td></tr>
+<tr><td> </td><td></td></tr>
+<tr><td><a href="struct/PA_PI_PU.html"><strong>PA</strong></a></td><td>sentence starter</td></tr>
+<tr><td><a href="struct/PA_PI_PU.html"><strong>PAI</strong></a></td><td>sentence terminator</td></tr>
+<tr><td><strong>PE</strong></td><td>predicate scope starter</td></tr>
+<tr><td><strong>PEI</strong></td><td>predicate scope terminator</td></tr>
+<tr><td><a href="struct/PA_PI_PU.html"><strong>PI</strong></a></td><td>argument list terminator terminator</td></tr>
+<tr><td><a href="struct/PO.html"><strong>PO</strong></a></td><td>definition starter</td></tr>
+<tr><td><a href="struct/PO.html"><strong>POI</strong></a></td><td>definition terminator</td></tr>
+<tr><td><a href="struct/PA_PI_PU.html"><strong>PU</strong></a></td><td>paragraph marker</td></tr>
+<tr><td> </td><td></td></tr>
+<tr><td><a href="units/TA.html"><strong>TA</strong></a></td><td>numbers/digits</td></tr>
+<tr><td> </td><td></td></tr>
+<tr><td><a href="units/LA_LE_LO.html"><strong>LA</strong></a></td><td>grammatical quote starter</td></tr>
+<tr><td><a href="units/LA_LE_LO.html"><strong>LAI</strong></a></td><td>grammatical quote terminator</td></tr>
+<tr><td><a href="units/LA_LE_LO.html"><strong>LE</strong></a></td><td>one word quote</td></tr>
+<tr><td><a href="units/LA_LE_LO.html"><strong>LO</strong></a></td><td>foreign quote</td></tr>
+</tbody></table>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                        
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                            </nav>
+
+        </div>
+
+        
+        
+        
+                <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+        
+                <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+                        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            MathJax.Hub.Register.StartupHook('End', function() {
+                window.setTimeout(window.print, 100);
+            });
+        });
+        </script>
+                
+    </body>
+</html>

@@ -1,0 +1,281 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Morphology - eberban Reference Grammar</title>
+                
+
+        <!-- Custom HTML head -->
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+                <link rel="icon" href="../favicon.svg">
+                        <link rel="shortcut icon" href="../favicon.png">
+                <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+                <link rel="stylesheet" href="../css/print.css" media="print">
+        
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+                <link rel="stylesheet" href="../fonts/fonts.css">
+        
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+                <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+            </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../intro/intro.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../intro/morpho.html" class="active"><strong aria-hidden="true">1.1.</strong> Morphology</a></li><li class="chapter-item expanded "><a href="../intro/phono.html"><strong aria-hidden="true">1.2.</strong> Phonology</a></li></ol></li><li class="chapter-item expanded "><a href="../logic/intro.html"><strong aria-hidden="true">2.</strong> eberban logic</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../logic/propositional.html"><strong aria-hidden="true">2.1.</strong> Propositional logic</a></li><li class="chapter-item expanded "><a href="../logic/first_order.html"><strong aria-hidden="true">2.2.</strong> First-order logic</a></li><li class="chapter-item expanded "><a href="../logic/second_order.html"><strong aria-hidden="true">2.3.</strong> Second-order logic</a></li></ol></li><li class="chapter-item expanded "><a href="../units/intro.html"><strong aria-hidden="true">3.</strong> Predicate units</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../units/R.html"><strong aria-hidden="true">3.1.</strong> Root words (R)</a></li><li class="chapter-item expanded "><a href="../units/MA.html"><strong aria-hidden="true">3.2.</strong> Intrinsic variables (MA)</a></li><li class="chapter-item expanded "><a href="../units/KA_GA.html"><strong aria-hidden="true">3.3.</strong> Extrinsic variables (KA/GA)</a></li><li class="chapter-item expanded "><a href="../units/TA.html"><strong aria-hidden="true">3.4.</strong> Numbers (TA)</a></li><li class="chapter-item expanded "><a href="../units/B.html"><strong aria-hidden="true">3.5.</strong> Borrowings (B)</a></li><li class="chapter-item expanded "><a href="../units/C.html"><strong aria-hidden="true">3.6.</strong> Compounds (C)</a></li><li class="chapter-item expanded "><a href="../units/LA_LE_LO.html"><strong aria-hidden="true">3.7.</strong> Quotes (LA/LE/LO)</a></li></ol></li><li class="chapter-item expanded "><a href="../bindings/intro.html"><strong aria-hidden="true">4.</strong> Predicate bindings</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../bindings/SA_ZA_BI.html"><strong aria-hidden="true">4.1.</strong> Unit transformations (SA/ZA/BI)</a></li><li class="chapter-item expanded "><a href="../bindings/VA_FA.html"><strong aria-hidden="true">4.2.</strong> Explicit bindings (VA/FA)</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> Text structure</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../struct/PA_PI_PU.html"><strong aria-hidden="true">5.1.</strong> Propositions and paragraphs (PA/PI/PU)</a></li><li class="chapter-item expanded "><a href="../struct/PO.html"><strong aria-hidden="true">5.2.</strong> Predicate definition (PO)</a></li><li class="chapter-item expanded "><a href="../struct/BU.html"><strong aria-hidden="true">5.3.</strong> Lists (BU)</a></li><li class="chapter-item expanded "><a href="../struct/DA_DI_DO_DU.html"><strong aria-hidden="true">5.4.</strong> Free modifiers (DA/DI/DO/DU)</a></li></ol></li><li class="chapter-item expanded "><a href="../families.html"><strong aria-hidden="true">6.</strong> List of particle families</a></li></ol>            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                                                <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                                            </div>
+
+                    <h1 class="menu-title">eberban Reference Grammar</h1>
+
+                    <div class="right-buttons">
+                                                <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                                                                        
+                    </div>
+                </div>
+
+                                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="morphology"><a class="header" href="#morphology">Morphology</a></h1>
+<p>The morphology of eberban is composed of 5 vowels (<strong>a, e, i, o, u</strong>), 16
+consonants (<strong>b, c, d, f, g, j, k, l, m, n, p, r, s, t, v, z</strong>) and a
+semi-consonant <strong>h</strong>, for a total of 22 letters. There is also one symbol <strong>'</strong>
+(<strong>.</strong> is also accepted) marking word boundary, which is optional in written
+media as long as there are spaces alongside it. Among the consonants, two
+special ones are designated as <strong>sonorants</strong> : <strong>n</strong> and <strong>r</strong>.</p>
+<p>Vowels and <strong>h</strong> can appear in clusters. <strong>h</strong> can appear only between 2 vowels,
+and the same vowel cannot appear more than one in a row. We call these <em>vowel
+clusters</em>.</p>
+<h2 id="words"><a class="header" href="#words">Words</a></h2>
+<p>Letters may be combined to form <em>words</em>. There are two main types of words:
+<em>particles</em> and <em>roots</em>. Particles exert grammatical functions, while roots
+denote concepts with an intrinsic meaning, such as &quot;cat&quot;, &quot;language&quot; or &quot;teach&quot;.
+Particles are organised in families sharing the same grammar and usually
+starting with the same consonnant.</p>
+<p>There are also 2 other types of words : <em>compounds</em> and <em>borrowings</em>. Compounds
+are made from one or multiple smaller words, while borrowings allows to imports
+foreign words or names. Compounds starts with <strong>a, e, i, o</strong> and borrowings with
+<strong>u</strong>.</p>
+<p>Borrowings must end in a vowel which can be followed by a sonorant. In written
+media it must be followed by a space or word boundary marker, while in speech
+the penultimate vowel must be stressed.</p>
+<blockquote>
+<p><strong>Remark:</strong> If you are familiar with Lojban, you may view particles as
+analogous to cmavo, roots to gismu, compounds to lujvo and borrowings to
+fu'ivla/cmevla.</p>
+</blockquote>
+<p>Particles starts with a non-sonorant consonant and can't contain a sonorant.</p>
+<p>Roots can either start with a non-sonorant consonant but then contain at least
+one sonorant, or start with a permissible consonant pair and any number of
+sonorants. Sonorants can appear as the second consonant of an initial pair,
+between vowel clusters and at the end of roots.</p>
+<p>All words starting with a vowel must be preceded by a pause (<strong>'</strong> and/or
+space). In written media, a sequence of words is typically, but not necessarily,
+separated by spaces (&quot; &quot;).</p>
+<blockquote>
+<p><strong>For the advanced reader:</strong> you may have noticed that all words start with
+either a vowel (preceded by a pause), or a non-sonorant; and that all words
+end with either a vowel or a sonorant. This is by design.
+As we will later see, these seemingly artificial restrictions involving
+sonorants ensure that, even if words (except borrowings) are strung together
+without any spaces between them, they can still be uniquely decomposed (i.e.
+spaces can be deterministically added back). This may seem unimportant, and
+indeed in written media spaces are not particularly obnoxious – they
+are recommended, even. But in spoken form spaces correspond to pauses, and
+this unique decomposition property suddenly becomes important: it means that,
+while speaking, we do not need to pause between every two words! For our
+fellow language nerds out there: this cool property is also known as
+self-segmenting morphophonology :-)</p>
+<p>Additionally, the penultimate vowel of borrowings is stressed, allowing
+segmenting to work with borrowings as well.</p>
+</blockquote>
+<h2 id="permissible-consonant-pairs"><a class="header" href="#permissible-consonant-pairs">Permissible consonant pairs</a></h2>
+<p>Not all consonant pairs are allowed in eberban. The following table lists all
+permissible consonant pairs.</p>
+<table><thead><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td>cp</td><td>ct</td><td>ck</td><td>cf</td><td>cm</td><td>cn</td><td>cl</td><td>cr</td></tr>
+<tr><td>sp</td><td>st</td><td>sk</td><td>sf</td><td>sm</td><td>sn</td><td>sl</td><td>sr</td></tr>
+<tr><td>jb</td><td>jd</td><td>jg</td><td>jv</td><td>jm</td><td>jn</td><td>jl</td><td>jr</td></tr>
+<tr><td>zb</td><td>zd</td><td>zg</td><td>zv</td><td>zm</td><td>zn</td><td>zl</td><td>zr</td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td> </td></tr>
+<tr><td>pl</td><td>pr</td><td>tl</td><td>tr</td><td>kl</td><td>kr</td><td>fl</td><td>fr</td></tr>
+<tr><td>bl</td><td>br</td><td>dl</td><td>dr</td><td>gl</td><td>gr</td><td>vl</td><td>vr</td></tr>
+<tr><td>ml</td><td>mr</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td> </td></tr>
+<tr><td>tc</td><td>ts</td><td>dj</td><td>dz</td><td>kc</td><td>ks</td><td>gj</td><td>gz</td></tr>
+<tr><td>pc</td><td>ps</td><td>bj</td><td>bz</td><td></td><td></td><td></td><td></td></tr>
+</tbody></table>
+<h2 id="permissible-consonnant-clusters-in-borrowings"><a class="header" href="#permissible-consonnant-clusters-in-borrowings">Permissible consonnant clusters in borrowings</a></h2>
+<p>Borrowings have more relaxed rules regarding allowed consonnant clusters. A
+maximum of 3 consonnants in a row are allowed, and they can't all be sonorants.
+A consonnant cannot be followed by the same one.</p>
+<p>Consonnants are split into 2 categories called <strong>voiced</strong> (b, d, g, j, v, z) and
+<strong>unvoiced</strong> (c, f, k, p, s, t). A <strong>voiced</strong> consonnant cannot be followed by
+an <strong>unvoiced</strong> one, and vice-versa.</p>
+<p>Additionnaly the following rules applies :</p>
+<table><thead><tr><th>Consonnant</th><th>Can't be followed by</th></tr></thead><tbody>
+<tr><td>j</td><td>z</td></tr>
+<tr><td>z</td><td>j</td></tr>
+<tr><td>s</td><td>c</td></tr>
+<tr><td>c</td><td>s</td></tr>
+</tbody></table>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                                                    <a rel="prev" href="../intro/intro.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+                                                    <a rel="next" href="../intro/phono.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                                    <a rel="prev" href="../intro/intro.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+                                    <a rel="next" href="../intro/phono.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                            </nav>
+
+        </div>
+
+        
+        
+        
+                <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+        
+                <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+        
+    </body>
+</html>
